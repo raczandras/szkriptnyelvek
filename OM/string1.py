@@ -30,7 +30,6 @@
 # Vagyis donuts(5) visszatérési értéke 'Fánkok száma: 5', míg
 # donuts(23) visszatérési értéke 'Fánkok száma: sok'
 def donuts(count):
-    # TODO...
     if count >= 10:
         return "Fánkok száma: sok"
     else:
@@ -72,8 +71,7 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Feltételezhetjük, hogy a bemeneti sztringek hossza legalább 2.
 def mix_up(a, b):
-    szoveg = b[0: 2] + a[2:] + " " + a[0: 2] + b[2:]
-    return szoveg
+    return b[0: 2] + a[2:] + " " + a[0: 2] + b[2:]
 
 
 # Egy egyszerű teszt fv. Kiírja az egyes fv.-ek visszaadott értékét, ill.
