@@ -15,17 +15,19 @@ def rend(word):
             ma = True
     
     if me and ma:
-        print(word + ": vegyes")
+      return "vegyes"
     elif me:
-        print(word + ": mély")
+      return "mély"
     elif ma:
-        print(word + ": magas")
+      return "magas"
+    else:
+      return "semmilyen"
 
 def main():
-    words = ["ablak", "erkély", "kisvasút", "magas", "mély"]
+    words = ["ablak", "erkély", "kisvasút", "magas", "mély", "zrt"]
 
     for w in words:
-        rend(w)
+        print(rend(w))
 
 
 if __name__ == "__main__":
