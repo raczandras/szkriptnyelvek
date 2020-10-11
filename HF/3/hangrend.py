@@ -2,33 +2,30 @@
 
 import sys
 
-MELY = 'aáoóuú'
-MAGAS = 'eéiíöőüű'
+MELYHANGOK = 'aáoóuú'
+MAGASHANGOK = 'eéiíöőüű'
+EREDMENYEK = ["Semmilyen", "Mély", "Magas", "Vegyes"]
+
 
 def rend(word):
     me = False
     ma = False
+    eredmeny = 0
     for c in word:
-        if c in MELY:
+        if c in MELYHANGOK and not bool(me):
             me = True
-        elif c in MAGAS:
+            eredmeny += 1
+        elif c in MAGASHANGOK and not bool(ma):
             ma = True
-    
-    if me and ma:
-      return "vegyes"
-    elif me:
-      return "mély"
-    elif ma:
-      return "magas"
-    else:
-      return "semmilyen"
+            eredmeny += 2
+    return eredmeny
+
 
 def main():
     words = ["ablak", "erkély", "kisvasút", "magas", "mély", "zrt"]
 
     for w in words:
-        print(rend(w))
-
+        print(EREDMENYEK[rend(w)])
 
 if __name__ == "__main__":
 	main()
