@@ -13,6 +13,8 @@ def isMun(szam):
 
 def main():
     for i in range(440000000):
+        if( i % 1000000 == 0):
+            print(i)
         if isMun(i):
            print(i)
 
