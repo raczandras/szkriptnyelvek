@@ -6,17 +6,23 @@ A Marca című sportnapilap hétfői internetes kiadása szerint az együttes j�
 
 A döntés várhatóan nem marad politikai visszhang nélkül Spanyolországban, tekintettel a katalán önállósodási törekvésekre."""
 
-EKEZETES = "áéíóöőúüűÁÉÍÓÖŐÚÜŰ"
-CSERE = "aeiooouuuAEIOOOUUU"
+
+
+def make_dict():
+	ekezetes = "áéíóöőúüűÁÉÍÓÖŐÚÜŰ"
+	csere = "aeiooouuuAEIOOOUUU"
+	d = {}
+	
+	i = 0
+	while i < len(ekezetes):
+		d[ekezetes[i]] = csere[i]
+		i += 1
+        
+	return d
 
 def main():
-    cseretar = {}
+    cseretar = make_dict()
     eredmeny = SZOVEG
-
-    i = 0
-    while i < len(EKEZETES):
-        cseretar[EKEZETES[i]] = CSERE[i]
-        i += 1
 
     for k in cseretar.keys():
         eredmeny = eredmeny.replace(k, cseretar[k])
