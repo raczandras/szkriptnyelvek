@@ -5,7 +5,7 @@ def atalakit(binaris):
     szoveg =' '
     lista = binaris.split()
 
-    for w in lista : 
+    for w in lista: 
         decimalis = int(w, 2)
         buffer.append(chr(decimalis))
 
